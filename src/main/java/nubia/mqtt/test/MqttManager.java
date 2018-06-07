@@ -97,6 +97,8 @@ public class MqttManager {
             conOpt.setWill(topic, "close".getBytes(), 2, true);
             // 客户端是否自动尝试重新连接到服务器
             conOpt.setAutomaticReconnect(true);
+            //双向认证
+            conOpt.setSocketFactory(DemoApplication.getSslSockFactory());
             // 创建MQTT客户端
             client = new MqttClient(brokerUrl, clientId, dataStore);
             // 设置回调
@@ -198,5 +200,4 @@ public class MqttManager {
     public static boolean isConnected() {
         return client != null && client.isConnected();
     }
-
 }

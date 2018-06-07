@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void mqtt(View view) {
-        String brokerUrl = "tcp://192.168.1.102:1883";
+        String brokerUrl = "ssl://192.168.1.102:8883";
+        //String brokerUrl = "tcp://192.168.1.102:1883";
         String userName = "admin";
         String passWord = "admin";
         String clientId = "123456";
